@@ -13,40 +13,6 @@ elseif (CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-long-long -pedantic")
 endif ()
 
-find_library(CPPUNIT_LIBRARY_DEBUG
-        NAMES cppunit
-              cppunit_dll
-              cppunitd
-              cppunitd_dll
-        PATHS /usr/lib
-              /usr/lib64
-              /usr/local/lib
-              /usr/local/lib64
-              "C:/Program Files (x86)/CppUnit/Lib/Debug-x64"
-              "C:/Program Files (x86)/CppUnit/Lib/Debug-x86"
-              "C:/Program Files (x86)/CppUnit/Lib/Debug-Win32"
-        PATH_SUFFIXES debug)
-find_library(CPPUNIT_LIBRARY_RELEASE
-        NAMES cppunit
-              cppunit_dll
-              cppunitd
-              cppunitd_dll
-        PATHS /usr/lib
-              /usr/lib64
-              /usr/local
-              /usr/local/lib64
-              "C:/Program Files (x86)/CppUnit/Lib/Release-x64"
-              "C:/Program Files (x86)/CppUnit/Lib/Release-x86"
-              "C:/Program Files (x86)/CppUnit/Lib/Release-Win32"
-        PATH_SUFFIXES release)
-
-if (CPPUNIT_LIBRARY_DEBUG AND NOT CPPUNIT_LIBRARY_RELEASE)
-    set(CPPUNIT_LIBRARY ${CPPUNIT_DEBUG})
-endif (CPPUNIT_LIBRARY_DEBUG AND NOT CPPUNIT_LIBRARY_RELEASE)
-
-set(CPPUNIT_LIBRARY
-        debug ${CPPUNIT_LIBRARY_DEBUG}
-        optimized ${CPPUNIT_LIBRARY_RELEASE})
 
 set(CMAKE_CXX_STANDARD 14)
 

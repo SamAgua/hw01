@@ -4,7 +4,7 @@
  *
  * @file Demo.cpp
  * @authors Jim Daehn <jdaehn@missouristate.edu>
- *          Your Name <yname@missouristate.edu>
+ *          Sam Aguayo <aguayo923@missouristate.edu>
  * @brief   Entry point for demo application.
  */
 
